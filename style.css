@@ -11,10 +11,10 @@ body{
 
 .card{
     width: 90%;
-    max-width: 470px;
+    max-width: 450px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin: 0 auto 0;
+    margin: 80px auto 80px;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -91,7 +91,24 @@ body{
     margin-right: 10px;
 }
 
-.wind, .humid{
+.wind{
     font-size: 28px;
     margin-top: -6px;
+}
+
+.humid{
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.weather{
+    display: none;
+}
+
+.error{
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: none;
 }
