@@ -8,11 +8,7 @@ const weatherIcon = document.querySelector('.weather-icon')
 async function checkWeather(city) {
     const response = await fetch(apiUrl + `&q=${city}` + `&appid=${apiKey}`);
     
-    if (response.status == 404){
-        document.querySelector('.error').style.display = "block";
-        document.querySelector('.weather').style.display = "none";
-    }
-    else {
+    try {
         var data = await response.json();
 
         document.querySelector('.city').innerHTML = data.name;
@@ -38,6 +34,17 @@ async function checkWeather(city) {
 
         document.querySelector('.weather').style.display = 'block';
         document.querySelector('.error').style.display = "none";
+        console.log(response.status);
+        console.log(response);
+        
+    }
+    catch (error) {
+        //if (response.status == 404){
+        document.querySelector('.error').style.display = "block";
+        document.querySelector('.weather').style.display = "none";
+
+        //}
+        document.querySelector('.error-message').innerHTML = `${response.status}: ${response.statusText} <br/> ${error.message}`
     }
 
     
